@@ -19,7 +19,8 @@ export async function GET(
   }
 
   try {
-    const pdfBuffer = await renderToBuffer(createElement(ReportPDF, { scan }));
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const pdfBuffer = await renderToBuffer(createElement(ReportPDF, { scan }) as any);
     const domain = scan.domain.replace(/[^a-z0-9-]/gi, '-');
 
     return new Response(pdfBuffer, {
