@@ -63,7 +63,8 @@ async function sendReportEmail(
   // Generate the PDF
   let pdfBuffer: Buffer | null = null;
   try {
-    pdfBuffer = await renderToBuffer(createElement(ReportPDF, { scan }));
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    pdfBuffer = await renderToBuffer(createElement(ReportPDF, { scan }) as any);
   } catch (err) {
     console.error('[email-capture] PDF generation failed:', err);
   }
