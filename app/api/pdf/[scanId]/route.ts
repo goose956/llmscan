@@ -23,7 +23,7 @@ export async function GET(
     const pdfBuffer = await renderToBuffer(createElement(ReportPDF, { scan }) as any);
     const domain = scan.domain.replace(/[^a-z0-9-]/gi, '-');
 
-    return new Response(pdfBuffer, {
+    return new Response(new Uint8Array(pdfBuffer), {
       headers: {
         'Content-Type': 'application/pdf',
         'Content-Disposition': `attachment; filename="llm-readiness-report-${domain}.pdf"`,
