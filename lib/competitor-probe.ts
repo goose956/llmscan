@@ -34,11 +34,11 @@ async function probeWithWebSearch(
   domain: string
 ): Promise<CompetitorProbePrompt> {
   try {
-    // @ts-ignore — web_search_20250305 is a beta tool type
     const response = await client.messages.create({
       model: MODEL,
       max_tokens: 512,
-      tools: [{ type: 'web_search_20250305', name: 'web_search' }],
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      tools: [{ type: 'web_search_20250305', name: 'web_search' }] as any,
       messages: [
         {
           role: 'user',
