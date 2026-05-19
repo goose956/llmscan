@@ -34,7 +34,7 @@ async function probeWithWebSearch(
   domain: string
 ): Promise<CompetitorProbePrompt> {
   try {
-    // @ts-expect-error — web_search_20250305 is a beta tool type
+    // @ts-ignore — web_search_20250305 is a beta tool type
     const response = await client.messages.create({
       model: MODEL,
       max_tokens: 512,
