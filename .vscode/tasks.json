@@ -1,0 +1,55 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Install & Dev",
+			"type": "shell",
+			"command": "npm install && npm run dev",
+			"isBackground": true,
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
+		{
+			"label": "npm install",
+			"type": "shell",
+			"command": "npm install",
+			"isBackground": false
+		},
+		{
+			"label": "Next.js Dev Server",
+			"type": "shell",
+			"command": "npm run dev",
+			"isBackground": true
+		},
+		{
+			"label": "LLM Scan Dev",
+			"type": "shell",
+			"command": "npm install && npm run dev",
+			"isBackground": true,
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
+		{
+			"label": "Install then Dev",
+			"type": "shell",
+			"command": "npm install; if ($?) { npm run dev }",
+			"isBackground": true
+		},
+		{
+			"label": "Clean and Install",
+			"type": "shell",
+			"command": "Remove-Item -Recurse -Force node_modules -ErrorAction SilentlyContinue; npm install; if ($?) { npm run dev }",
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "npm install fast",
+			"type": "shell",
+			"command": "npm install --no-audit --no-fund --prefer-offline",
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}
