@@ -1,17 +1,18 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { Logo } from '@/components/Logo';
 
 export const metadata: Metadata = {
   title: {
-    default: 'LLM Scan — Is your ecommerce store visible to AI?',
-    template: '%s | LLM Scan',
+    default: 'cited.shop — Is your ecommerce store visible to AI?',
+    template: '%s | cited.shop',
   },
   description:
-    'Find out how visible your ecommerce store is when shoppers ask ChatGPT, Perplexity, or Google AI Mode for product recommendations. Free LLM-readiness score in under 30 seconds.',
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? 'https://llmscan.app'),
+    'Find out how visible your ecommerce store is when shoppers ask ChatGPT, Perplexity, or Google AI Mode for product recommendations. Free AI-visibility score in under 30 seconds.',
+  metadataBase: new URL((() => { const u = process.env.NEXT_PUBLIC_APP_URL ?? 'https://cited.shop'; return u.startsWith('http') ? u : `https://${u}`; })()),
   openGraph: {
     type: 'website',
-    siteName: 'LLM Scan',
+    siteName: 'cited.shop',
   },
 };
 
@@ -26,11 +27,11 @@ export default function RootLayout({
         {/* Top nav */}
         <header className="border-b border-border/60 bg-background/95 backdrop-blur sticky top-0 z-30">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
-            <a href="/" className="font-display text-lg font-semibold text-foreground hover:text-primary transition-colors">
-              LLM Scan
+            <a href="/" className="hover:opacity-80 transition-opacity">
+              <Logo />
             </a>
             <span className="text-xs text-muted-foreground hidden sm:block">
-              LLM-Readiness Pre-Scan for Ecommerce
+              AI Visibility Pre-Scan for Ecommerce
             </span>
           </div>
         </header>
@@ -40,7 +41,7 @@ export default function RootLayout({
         {/* Footer */}
         <footer className="border-t border-border/60 mt-24 py-8 text-center text-xs text-muted-foreground">
           <div className="max-w-6xl mx-auto px-4 space-y-1">
-            <p>LLM Scan — a GEO consultancy lead-gen tool</p>
+            <p>cited.shop — AI visibility for ecommerce</p>
             <p className="opacity-60">
               ~$0.07 per scan (Firecrawl + Claude) · Results stored for 30 days
             </p>

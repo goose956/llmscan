@@ -306,7 +306,7 @@ function PageHeader({ domain, scanId }: { domain: string; scanId: string }) {
   return (
     <View style={styles.pageHeader}>
       <Text style={styles.pageHeaderLeft}>LLM-Readiness Report · {domain}</Text>
-      <Text style={styles.pageHeaderRight}>llmscan.app/scan/{scanId}</Text>
+      <Text style={styles.pageHeaderRight}>cited.shop/scan/{scanId}</Text>
     </View>
   );
 }
@@ -345,10 +345,10 @@ export function ReportPDF({ scan }: ReportPDFProps) {
     : [];
 
   return (
-    <Document title={`LLM-Readiness Report — ${scan.domain}`} author="LLM Scan">
+    <Document title={`AI Visibility Report — ${scan.domain}`} author="cited.shop">
       {/* ── Cover page ──────────────────────────────────────────────────────── */}
       <Page size="A4" style={styles.coverPage}>
-        <Text style={styles.coverLogo}>LLM Scan</Text>
+        <Text style={styles.coverLogo}>cited.shop</Text>
 
         <View>
           <Text style={styles.coverScore}>{scan.score ?? '—'}</Text>
@@ -488,8 +488,8 @@ export function ReportPDF({ scan }: ReportPDFProps) {
         <View style={{ marginTop: 40 }}>
           <Text style={{ fontSize: 11, color: '#FFFFFFB0', fontFamily: 'Helvetica' }}>
             Book a call or order at{' '}
-            <Link src={process.env.NEXT_PUBLIC_APP_URL ?? 'https://llmscan.app'} style={{ color: '#FFFFFF' }}>
-              {(process.env.NEXT_PUBLIC_APP_URL ?? 'https://llmscan.app').replace('https://', '')}
+            <Link src={process.env.NEXT_PUBLIC_APP_URL ?? 'https://cited.shop'} style={{ color: '#FFFFFF' }}>
+              {(process.env.NEXT_PUBLIC_APP_URL ?? 'https://cited.shop').replace('https://', '')}
             </Link>
           </Text>
         </View>

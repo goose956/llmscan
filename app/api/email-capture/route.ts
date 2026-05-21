@@ -56,8 +56,8 @@ async function sendReportEmail(
     return;
   }
 
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'https://llmscan.app';
-  const fromEmail = process.env.RESEND_FROM_EMAIL ?? 'reports@llmscan.app';
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'https://cited.shop';
+  const fromEmail = process.env.RESEND_FROM_EMAIL ?? 'reports@cited.shop';
   const resend = new Resend(resendKey);
 
   // Generate the PDF
@@ -73,9 +73,9 @@ async function sendReportEmail(
     scan.band === 'green' ? 'LLM-Ready' : scan.band === 'amber' ? 'Partially Visible' : 'Invisible to AI';
 
   await resend.emails.send({
-    from: `LLM Scan <${fromEmail}>`,
+    from: `cited.shop <${fromEmail}>`,
     to: email,
-    subject: `Your LLM-Readiness Report for ${scan.domain} — Score: ${scan.score}/100`,
+    subject: `Your AI Visibility Report for ${scan.domain} — Score: ${scan.score}/100`,
     html: `
 <!DOCTYPE html>
 <html>
@@ -83,7 +83,7 @@ async function sendReportEmail(
 <body style="font-family: system-ui, sans-serif; color: #1a1a1a; background: #fafaf8; margin: 0; padding: 0;">
   <div style="max-width: 600px; margin: 0 auto; padding: 48px 24px;">
     <div style="margin-bottom: 32px;">
-      <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #6b6560;">LLM Scan Report</span>
+      <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #6b6560;">cited.shop Report</span>
       <h1 style="font-size: 28px; margin: 8px 0 4px; color: #1a1a1a;">Your report is ready</h1>
       <p style="color: #6b6560; margin: 0;">${scan.domain}</p>
     </div>
@@ -112,7 +112,7 @@ async function sendReportEmail(
     attachments: pdfBuffer
       ? [
           {
-            filename: `llm-readiness-report-${scan.domain.replace(/[^a-z0-9-]/gi, '-')}.pdf`,
+            filename: `cited-report-${scan.domain.replace(/[^a-z0-9-]/gi, '-')}.pdf`,
             content: pdfBuffer,
           },
         ]

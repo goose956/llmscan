@@ -46,7 +46,7 @@ function LoginForm() {
             <Lock className="w-5 h-5 text-primary" />
           </div>
           <h1 className="text-xl font-semibold text-foreground">Admin Access</h1>
-          <p className="text-sm text-muted-foreground">LLM Scan dashboard</p>
+          <p className="text-sm text-muted-foreground">cited.shop dashboard</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">

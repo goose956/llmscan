@@ -1086,7 +1086,7 @@ export default function SampleAuditPage() {
           <div className="flex items-center gap-3">
             <span className="font-display font-bold text-white text-lg tracking-tight">Cited</span>
             <span className="text-white/20 text-lg">|</span>
-            <span className="text-white/60 text-sm">LLM-Readiness Audit</span>
+            <span className="text-white/60 text-sm">AI Visibility Audit</span>
           </div>
           <div className="flex items-center gap-3">
             <span className="text-xs text-white/40 hidden md:inline">Report #{meta.reportId} · 19 May 2026</span>

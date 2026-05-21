@@ -26,7 +26,7 @@ export async function GET(
     return new Response(new Uint8Array(pdfBuffer), {
       headers: {
         'Content-Type': 'application/pdf',
-        'Content-Disposition': `attachment; filename="llm-readiness-report-${domain}.pdf"`,
+        'Content-Disposition': `attachment; filename="cited-report-${domain}.pdf"`,
         'Cache-Control': 'private, no-store',
       },
     });

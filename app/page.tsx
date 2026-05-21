@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { ScanInput } from '@/components/ScanInput';
 
 export const metadata: Metadata = {
-  title: 'LLM Scan — Is your ecommerce store visible to AI?',
+  title: 'cited.shop — Is your ecommerce store visible to AI?',
 };
 
 const TRUST_SIGNALS = [
@@ -36,7 +36,7 @@ export default function HomePage() {
       <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-16 pb-12 sm:pt-24 sm:pb-16">
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary mb-6">
-            Free LLM-Readiness Pre-Scan
+            Free AI-Visibility Pre-Scan
           </div>
 
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold text-foreground leading-tight tracking-tight">
@@ -102,7 +102,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
               {
-                title: 'LLM-Readiness Score',
+                title: 'AI Visibility Score',
                 body: 'A single 0–100 score across 5 weighted signals. Colour-banded: LLM-Ready (green), Partially Visible (amber), or Invisible to AI (red).',
               },
               {

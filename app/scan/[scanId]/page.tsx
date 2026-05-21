@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const scan = await getScan(scanId);
   if (!scan) return { title: 'Scan not found' };
   return {
-    title: `LLM-Readiness Report — ${scan.domain} (${scan.score ?? '…'}/100)`,
+    title: `AI Visibility Report — ${scan.domain} (${scan.score ?? '…'}/100)`,
   };
 }
 
