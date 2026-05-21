@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     template: '%s | cited.shop',
   },
   description:
-    'Find out if your Shopify store gets cited when shoppers ask ChatGPT, Perplexity, or Google AI Mode for product recommendations. Free AI-visibility score in under 30 seconds.',,
+    'Find out if your Shopify store gets cited when shoppers ask ChatGPT, Perplexity, or Google AI Mode for product recommendations. Free AI-visibility score in under 30 seconds.',
   metadataBase: new URL((() => { const u = process.env.NEXT_PUBLIC_APP_URL ?? 'https://cited.shop'; return u.startsWith('http') ? u : `https://${u}`; })()),
   openGraph: {
     type: 'website',
