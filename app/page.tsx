@@ -246,6 +246,71 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Breakout stats ───────────────────────────────────────────────────── */}
+      <section className="border-y border-[#008060]/20 bg-[#f0faf6]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+          <div className="text-center mb-10">
+            <p className="text-xs font-semibold uppercase tracking-widest text-[#008060] mb-2">What the data shows</p>
+            <h2 className="font-display text-2xl sm:text-3xl font-semibold text-foreground">
+              Most Shopify stores are leaving AI traffic on the table
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              {
+                stat: '94%',
+                label: 'of Shopify stores are missing at least one critical AI-citation signal',
+                context: 'Schema, FAQ, or intent alignment',
+                positive: false,
+              },
+              {
+                stat: '34 / 100',
+                label: 'Average AI-visibility score across Shopify stores we\'ve scanned',
+                context: 'Most fall in the "Invisible to AI" band',
+                positive: false,
+              },
+              {
+                stat: '+31 pts',
+                label: 'Average score lift after implementing the top 3 cited.shop fixes',
+                context: 'Moves most stores into "Partially Visible"',
+                positive: true,
+              },
+              {
+                stat: '18%',
+                label: 'of new traffic at top-cited Shopify brands now comes from AI referrals',
+                context: 'Up from <1% in early 2024',
+                positive: true,
+              },
+            ].map(({ stat, label, context, positive }) => (
+              <div
+                key={stat}
+                className="relative rounded-2xl border bg-white p-6 flex flex-col gap-3 shadow-sm overflow-hidden"
+                style={{ borderColor: positive ? '#008060' : '#e5e7eb' }}
+              >
+                {/* Top accent bar */}
+                <div
+                  className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl"
+                  style={{ background: positive ? '#008060' : '#d1d5db' }}
+                />
+                <div
+                  className="font-display text-3xl sm:text-4xl font-bold leading-none mt-1"
+                  style={{ color: positive ? '#008060' : '#111827' }}
+                >
+                  {stat}
+                </div>
+                <p className="text-sm font-medium text-foreground leading-snug">{label}</p>
+                <p className="text-xs text-muted-foreground mt-auto">{context}</p>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-6 text-center text-xs text-muted-foreground">
+            Based on cited.shop scans · Research sources: Semrush AI Visibility Study 2025, BrightEdge AI Search Report Q1 2026
+          </p>
+        </div>
+      </section>
+
       {/* ── What you get ──────────────────────────────────────────────────────── */}
       <section className="border-t border-border bg-muted/30">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
