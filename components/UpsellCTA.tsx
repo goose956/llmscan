@@ -1,5 +1,9 @@
+'use client';
+
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Check } from 'lucide-react';
+import Image from 'next/image';
 
 const FEATURES = [
   '50–100 pages scored across your entire store',
@@ -10,8 +14,27 @@ const FEATURES = [
   '48-hour turnaround',
 ];
 
+const PREVIEWS = [
+  {
+    label: 'Overview',
+    src: '/preview-overview.jpg',
+    caption: 'Site-level score, top issues, and competitor citation gap',
+  },
+  {
+    label: 'AI Heatmap',
+    src: '/preview-heatmap.jpg',
+    caption: '30 buying prompts × 4 AI engines — see exactly where you're invisible',
+  },
+  {
+    label: 'Quick Wins',
+    src: '/preview-quickwins.jpg',
+    caption: 'Prioritised action list with effort estimates and ready-to-use code',
+  },
+];
+
 export function UpsellCTA() {
   const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL;
+  const [activePreview, setActivePreview] = useState(0);
 
   return (
     <section className="rounded-xl overflow-hidden border border-primary/20">
@@ -25,12 +48,53 @@ export function UpsellCTA() {
         </h2>
       </div>
 
+      {/* Dashboard preview */}
+      <div className="bg-muted/40 border-b border-border px-4 pt-4 pb-0">
+        <p className="text-xs font-medium text-muted-foreground mb-3 px-1">
+          This is what your full audit dashboard looks like:
+        </p>
+
+        {/* Tab strip */}
+        <div className="flex gap-1">
+          {PREVIEWS.map((p, i) => (
+            <button
+              key={p.label}
+              onClick={() => setActivePreview(i)}
+              className={`px-3 py-1.5 rounded-t-lg text-xs font-medium transition-colors border-t border-x ${
+                activePreview === i
+                  ? 'bg-card border-border text-foreground'
+                  : 'bg-transparent border-transparent text-muted-foreground hover:text-foreground'
+              }`}
+            >
+              {p.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Screenshot */}
+        <div className="relative rounded-tr-xl overflow-hidden border border-b-0 border-border shadow-md">
+          <Image
+            src={PREVIEWS[activePreview].src}
+            alt={PREVIEWS[activePreview].caption}
+            width={930}
+            height={650}
+            className="w-full object-cover object-top"
+            priority
+          />
+          {/* Bottom fade */}
+          <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-muted/70 to-transparent" />
+          <p className="absolute bottom-2 left-3 right-3 text-[11px] text-muted-foreground text-center">
+            {PREVIEWS[activePreview].caption}
+          </p>
+        </div>
+      </div>
+
       {/* Body */}
       <div className="bg-card px-6 py-6 space-y-5">
         <p className="text-sm text-muted-foreground leading-relaxed">
           This pre-scan covered one page against 5 signals. The full-site audit maps every page
-          in your store, probes 30+ buying intents, and delivers an implementation backlog your
-          dev team can execute immediately.
+          in your Shopify store, probes 30+ buying intents, and delivers an implementation backlog
+          your dev team can execute immediately.
         </p>
 
         <ul className="space-y-2">
