@@ -387,7 +387,7 @@ const TABS: { id: TabId; label: string; count?: string; color: string; activeCol
   { id: 'offsite',      label: 'Off-site Signals',  count: '5',   color: 'hover:bg-teal-900/40',    activeColor: 'bg-teal-600',    dot: 'bg-teal-400'    },
   { id: 'backlog',      label: 'Content Backlog',   count: '8',   color: 'hover:bg-orange-900/40',  activeColor: 'bg-orange-500',  dot: 'bg-orange-400'  },
   { id: 'newpages',     label: 'New Pages',         count: '320', color: 'hover:bg-pink-900/40',    activeColor: 'bg-pink-600',    dot: 'bg-pink-400'    },
-  { id: 'plan',         label: 'Full Plan',                       color: 'hover:bg-indigo-900/40',  activeColor: 'bg-indigo-600',  dot: 'bg-indigo-400'  },
+  { id: 'plan',         label: 'Full Plan',                       color: 'hover:bg-green-900/40',   activeColor: 'bg-green-700',   dot: 'bg-green-400'   },
 ];
 
 // ── Sidebar score gauge (compact) ────────────────────────────────────────────
@@ -1056,12 +1056,12 @@ function FullPlanPanel({ plan }: { plan: PlanPhase[] }) {
       </div>
 
       {/* CTA */}
-      <div className="rounded-2xl border-2 border-indigo-200 bg-indigo-50 p-6 flex flex-wrap gap-4 items-center justify-between">
+      <div className="rounded-2xl border-2 border-green-200 bg-green-50 p-6 flex flex-wrap gap-4 items-center justify-between">
         <div>
           <p className="font-display text-xl font-bold text-foreground">Want Cited to execute this plan for you?</p>
           <p className="text-sm text-muted-foreground mt-1">We handle schema, content writing, off-site outreach, and monthly reporting. Full-service from audit to citation.</p>
         </div>
-        <a href="#" className="px-5 py-2.5 rounded-lg bg-indigo-600 text-white font-semibold text-sm hover:bg-indigo-700 transition-colors whitespace-nowrap">
+        <a href="#" className="px-5 py-2.5 rounded-lg bg-[#008060] text-white font-semibold text-sm hover:bg-[#004c3f] transition-colors whitespace-nowrap">
           Book a strategy call →
         </a>
       </div>

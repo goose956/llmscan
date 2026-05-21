@@ -24,7 +24,7 @@ export function Logo({ className, size = 'default', iconOnly = false }: LogoProp
         aria-hidden="true"
       >
         {/* Background */}
-        <rect width="36" height="36" rx="9" fill="#3730A3" />
+        <rect width="36" height="36" rx="9" fill="#004c3f" />
 
         {/* Left citation bracket */}
         <path
@@ -58,7 +58,7 @@ export function Logo({ className, size = 'default', iconOnly = false }: LogoProp
       {!iconOnly && (
         <span className={cn('font-display leading-none', textClass)}>
           <span className="font-bold text-foreground">cited</span>
-          <span className="font-semibold text-indigo-600">.shop</span>
+          <span className="font-semibold text-primary">.shop</span>
         </span>
       )}
     </span>

@@ -66,7 +66,7 @@ export default function HomePage() {
       <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-16 pb-12 sm:pt-24 sm:pb-16">
         <div className="max-w-3xl">
           {/* Shopify badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#008060]/30 bg-[#008060]/8 px-3 py-1 text-xs font-medium text-[#006e52] mb-6">
+          <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-xs font-medium text-primary mb-6">
             {/* Shopify bag icon */}
             <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="currentColor" aria-hidden="true">
               <path d="M15.337 6.56a.498.498 0 0 0-.46-.43l-1.106-.08a.5.5 0 0 0-.08 0c-.04 0-.08 0-.12.01l-.08.01-.48-1.46A2.503 2.503 0 0 0 10.6 3a2.5 2.5 0 0 0-2.41 1.6l-.48 1.46-.22-.01h-.08l-1.1.08a.5.5 0 0 0-.46.43L5 19h10l-1.337-9.99-.33-2.45zM10.6 4c.57 0 1.08.36 1.28.9l.38 1.14H8.94l.38-1.14A1.36 1.36 0 0 1 10.6 4zm-4.38 14 1.11-8.31.96-.07.46 1.38h2.5l.46-1.38.96.07L13.78 18H6.22z"/>
@@ -120,7 +120,7 @@ export default function HomePage() {
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-xl bg-white/5 border border-white/10 p-4">
-                  <div className="font-display text-2xl font-bold text-emerald-400">38B</div>
+                  <div className="font-display text-2xl font-bold" style={{ color: '#00c27a' }}>38B</div>
                   <div className="text-xs text-slate-400 mt-1">AI-assisted product queries / month (Q2 2026)</div>
                 </div>
                 <div className="rounded-xl bg-white/5 border border-white/10 p-4">
@@ -134,7 +134,7 @@ export default function HomePage() {
             <div>
               <div className="text-xs text-slate-500 mb-2 flex justify-between">
                 <span>Monthly AI product queries (billions)</span>
-                <span className="text-emerald-400 font-medium">↑ 126× growth</span>
+                <span style={{ color: '#00c27a' }} className="font-medium">↑ 126× growth</span>
               </div>
               <svg
                 viewBox={`0 0 ${CHART_W} ${CHART_H + 28}`}
@@ -143,8 +143,8 @@ export default function HomePage() {
               >
                 <defs>
                   <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#10b981" stopOpacity="0.35" />
-                    <stop offset="100%" stopColor="#10b981" stopOpacity="0.02" />
+                    <stop offset="0%" stopColor="#00c27a" stopOpacity="0.35" />
+                    <stop offset="100%" stopColor="#00c27a" stopOpacity="0.02" />
                   </linearGradient>
                   {/* Subtle grid lines */}
                   {[0.25, 0.5, 0.75, 1].map((t) => (
@@ -171,11 +171,11 @@ export default function HomePage() {
                 <path d={areaPath} fill="url(#areaGrad)" />
 
                 {/* Line */}
-                <path d={linePath} fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d={linePath} fill="none" stroke="#00c27a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
 
                 {/* NOW dot */}
-                <circle cx={coords[coords.length - 1].x} cy={coords[coords.length - 1].y} r="5" fill="#10b981" />
-                <circle cx={coords[coords.length - 1].x} cy={coords[coords.length - 1].y} r="9" fill="#10b981" fillOpacity="0.2" />
+                <circle cx={coords[coords.length - 1].x} cy={coords[coords.length - 1].y} r="5" fill="#00c27a" />
+                <circle cx={coords[coords.length - 1].x} cy={coords[coords.length - 1].y} r="9" fill="#00c27a" fillOpacity="0.2" />
 
                 {/* X-axis labels — show first, middle, last */}
                 {[0, 4, 9].map((i) => (
@@ -198,7 +198,7 @@ export default function HomePage() {
                   y={coords[coords.length - 1].y - 14}
                   textAnchor="middle"
                   fontSize="10"
-                  fill="#10b981"
+                  fill="#00c27a"
                   fontFamily="system-ui, sans-serif"
                   fontWeight="600"
                 >

@@ -14,19 +14,19 @@
     --card: 0 0% 100%;
     --card-foreground: 0 0% 10%;
 
-    /* Deep blue primary */
-    --primary: 219 60% 26%;
+    /* Shopify green primary */
+    --primary: 165 100% 25%;
     --primary-foreground: 0 0% 100%;
 
-    /* Warm muted tones */
-    --muted: 35 20% 94%;
-    --muted-foreground: 25 8% 43%;
+    /* Warm muted tones with a hint of green */
+    --muted: 150 12% 94%;
+    --muted-foreground: 160 6% 42%;
 
     /* Borders */
-    --border: 35 15% 88%;
+    --border: 150 10% 87%;
 
-    /* Accent (same as primary for now) */
-    --accent: 219 60% 26%;
+    /* Accent (same as primary) */
+    --accent: 165 100% 25%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 75% 42%;
