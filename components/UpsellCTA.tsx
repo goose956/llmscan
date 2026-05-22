@@ -23,7 +23,7 @@ const PREVIEWS = [
   {
     label: 'AI Heatmap',
     src: '/preview-heatmap.jpg',
-    caption: '30 buying prompts × 4 AI engines — see exactly where you're invisible',
+    caption: "30 buying prompts × 4 AI engines — see exactly where you're invisible",
   },
   {
     label: 'Quick Wins',
